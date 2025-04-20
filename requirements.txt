@@ -5,3 +5,5 @@ pillow
 numpy
 gunicorn
 opencv-python
+torch
+tensorflow==2.14.0
