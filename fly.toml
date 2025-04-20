@@ -1,14 +1,10 @@
 app = "pdd-flask"
 
 [build]
-  builtin = "python"
+  dockerfile = "Dockerfile"
 
 [env]
   PORT = "8080"
-
-[http_service]
-  internal_port = 8080
-  force_https = true
 
 [[services]]
   protocol = "tcp"
@@ -22,7 +18,11 @@ app = "pdd-flask"
     handlers = ["tls", "http"]
     port = 443
 
+[http_service]
+  internal_port = 8080
+  force_https = true
+
 [vm]
-  memory = 2048  # Increase memory for YOLO model
+  memory = 2048
   cpu_kind = "shared"
   cpus = 1
