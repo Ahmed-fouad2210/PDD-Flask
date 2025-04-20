@@ -1,3 +1,4 @@
+python==3.10.12
 flask
 flask-cors
 ultralytics
@@ -6,4 +7,3 @@ numpy
 gunicorn
 opencv-python
 torch
-tensorflow==2.14.0
