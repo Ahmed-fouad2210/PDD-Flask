@@ -1,4 +1,4 @@
-app = "pdd-flask"  # Replace with your actual Fly.io app name
+app = "pdd-flask"
 
 [build]
   builtin = "python"
@@ -6,9 +6,13 @@ app = "pdd-flask"  # Replace with your actual Fly.io app name
 [env]
   PORT = "8080"
 
-[[services]]
+[http_service]
   internal_port = 8080
+  force_https = true
+
+[[services]]
   protocol = "tcp"
+  internal_port = 8080
 
   [[services.ports]]
     handlers = ["http"]
@@ -17,3 +21,8 @@ app = "pdd-flask"  # Replace with your actual Fly.io app name
   [[services.ports]]
     handlers = ["tls", "http"]
     port = 443
+
+[vm]
+  memory = 2048  # Increase memory for YOLO model
+  cpu_kind = "shared"
+  cpus = 1
