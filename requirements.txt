@@ -1,9 +1,8 @@
-python==3.10.12
 flask
 flask-cors
-ultralytics
 pillow
 numpy
 gunicorn
-opencv-python
-torch
+ultralytics==8.0.211
+torch==2.0.1
+opencv-python==4.7.0.72
